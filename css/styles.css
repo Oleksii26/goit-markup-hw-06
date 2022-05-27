@@ -233,26 +233,41 @@ img {
   color: var(--secondary-text-cl);
 }
 .modal-input {
+  width: 100%;
+  height: 100%;
+  border: none;
   width: 448px;
   height: 40px;
   outline: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
   padding-left: 42px;
-  border: none;
   transition: var(--hover-anim);
 }
-.modal-input:hover,
 .modal-input:focus {
-  outline: 1px solid var(--accent-color);
+  outline-color: var(--accent-color);
 }
 .modal-label {
+  display: block;
   font-weight: 400;
   font-size: 12px;
   line-height: 1.17;
   letter-spacing: 0.01em;
   color: var(--main-text-cl);
+  transition: border-color var(--hover-anim);
+  height: 58px;
+  margin-bottom: 10px;
 }
+.modal-label-coment {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.01em;
+  color: var(--main-text-cl);
+  transition: border-color var(--hover-anim);
+}
+
 .comment {
+  margin-top: 4px;
   resize: none;
   width: 448px;
   height: 120px;
@@ -266,15 +281,23 @@ img {
   border-radius: 4px;
   transition: var(--hover-anim);
 }
-.comment:hover,
+.comment:placeholder-shown {
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.01em;
+  color: rgba(117, 117, 117, 0.5);
+}
+
 .comment:focus {
   outline: 1px solid var(--accent-color);
 }
 .modal-field {
+  margin-top: 4px;
+  border-radius: 4px;
   position: relative;
-  color: var(--secondary-text-cl);
 }
-.modal-field:hover .modal-svg {
+
+.modal-field:focus .modal-svg {
   color: var(--accent-color);
 }
 .modal-field:focus-within .modal-svg {
@@ -282,8 +305,8 @@ img {
 }
 .modal-svg {
   position: absolute;
-  left: 12px;
-  top: 11px;
+  left: 15px;
+  top: 14px;
   fill: currentColor;
   transition: var(--hover-anim);
 }
@@ -312,18 +335,24 @@ img {
   margin-left: auto;
   cursor: pointer;
   transition: var(--hover-anim);
+  border-radius: 4px;
 }
 .modal-btn:hover,
 .modal-btn:focus {
   background-color: var(--btn-hover-cl);
-  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
-    0px 2px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
 }
 .checkbox:checked + .modal-check {
- fill: var(--main-bg-cl);
+  fill: var(--main-bg-cl);
   background-color: var(--accent-color);
   border-color: var(--accent-color);
-  
+}
+.checkbox:focus + .modal-check {
+  border-color: var(--accent-color);
+}
+.checkbox:hover + .modal-check {
+  border-color: var(--accent-color);
 }
 .modal-check {
   width: 16px;
@@ -654,7 +683,7 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: var(--hover-anim);
+  transition: background-color var(--hover-anim);
 }
 .team-link:not(:last-child) {
   margin-right: 10px;
@@ -669,6 +698,7 @@ img {
 }
 
 .team-icon {
+  transition: var(--hover-anim);
   fill: var(--clients-color);
 }
 
@@ -759,7 +789,7 @@ img {
   margin-bottom: 0;
 }
 .footer-social {
-  margin-right: 93px;
+  margin-right: auto;
 }
 .text-footer {
   color: var(--main-bg-cl);
@@ -794,7 +824,7 @@ img {
   height: 44px;
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 50%;
-  transition: var(--hover-anim);
+  transition: background-color var(--hover-anim);
 }
 .social-icon {
   fill: var(--main-bg-cl);
@@ -803,7 +833,9 @@ img {
 .social-link:focus {
   background-color: var(--accent-color);
 }
+
 .input-footer {
+  color: var(--main-bg-cl);
   font-size: 16px;
   letter-spacing: 0.03em;
   width: 358px;

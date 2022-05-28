@@ -239,16 +239,16 @@ img {
   border: none;
   width: 448px;
   height: 40px;
-  outline: 1px solid rgba(33, 33, 33, 0.2);
-  border-radius: 4px;
   padding-left: 42px;
   transition: var(--hover-anim);
-}
-.modal-input:focus,
-.modal-input:hover {
-  outline-color: var(--accent-color);
+  border: none;
+  outline: transparent;
 }
 
+.modal-input:focus {
+  outline: 1px solid var(--accent-color);
+  border-radius: 4px;
+}
 .modal-label {
   display: block;
   font-weight: 400;
@@ -256,7 +256,6 @@ img {
   line-height: 1.17;
   letter-spacing: 0.01em;
   color: var(--main-text-cl);
-  transition: border-color var(--hover-anim);
   height: 58px;
   margin-bottom: 10px;
 }
@@ -266,7 +265,6 @@ img {
   line-height: 1.17;
   letter-spacing: 0.01em;
   color: var(--main-text-cl);
-  transition: border-color var(--hover-anim);
 }
 
 .comment {
@@ -291,17 +289,28 @@ img {
   color: rgba(117, 117, 117, 0.5);
 }
 
-.comment:focus {
+.comment:focus,
+.comment:hover {
   outline: 1px solid var(--accent-color);
+}
+.modal-field:focus .modal-input {
+  outline: transparent;
 }
 .modal-field {
   margin-top: 4px;
   border-radius: 4px;
   position: relative;
+  border: none;
+  outline: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  transition: var(--hover-anim);
 }
 
-.modal-field:hover {
+.modal-field:hover,
+.modal-field:focus {
   color: var(--accent-color);
+  outline-color: var(--accent-color);
+  border: none;
 }
 .modal-field:focus-within .modal-svg {
   color: var(--accent-color);
@@ -311,7 +320,6 @@ img {
   left: 15px;
   top: 14px;
   fill: currentColor;
-  transition: var(--hover-anim);
 }
 
 .radio {
@@ -339,6 +347,7 @@ img {
   cursor: pointer;
   transition: var(--hover-anim);
   border-radius: 4px;
+  outline: transparent;
 }
 .modal-btn:hover,
 .modal-btn:focus {

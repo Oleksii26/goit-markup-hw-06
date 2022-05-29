@@ -255,7 +255,7 @@ img {
   font-size: 12px;
   line-height: 1.17;
   letter-spacing: 0.01em;
-  color: var(--main-text-cl);
+  color: var(--secondary-text-cl);
   height: 58px;
   margin-bottom: 10px;
 }
@@ -266,7 +266,9 @@ img {
   letter-spacing: 0.01em;
   color: var(--main-text-cl);
 }
-
+.form-span {
+  color: var(--main-text-cl);
+}
 .comment {
   margin-top: 4px;
   resize: none;
@@ -649,13 +651,13 @@ img {
   position: absolute;
   transition: transform var(--hover-anim);
   transform: translateY(100%);
-  opacity: 0;
   width: 100%;
   height: 100%;
 }
 .link-icon {
   text-decoration: none;
   display: block;
+  transition: box-shadow var(--hover-anim);
 }
 .link-icon:hover,
 .link-icon:focus {
@@ -665,7 +667,6 @@ img {
 .link-icon:hover .catalog-card-two,
 .link-icon:focus .catalog-card-two {
   transform: translateY(0%);
-  opacity: 1;
 }
 .catalog-items:nth-child(3n) {
   margin-right: 0;
